@@ -45,3 +45,7 @@ python main.py -input test.jpg
 
 **Screenshots**
 
+![](https://github.com/TwizzyIndy/count_people/raw/main/test8.jpg)
+
+
+![](https://github.com/TwizzyIndy/count_people/raw/main/test8.jpg_out.jpg)
