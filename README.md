@@ -50,4 +50,8 @@ python main.py -input test.jpg
 
 ![](https://github.com/TwizzyIndy/count_people/raw/main/test8.jpg_out.jpg)
 
+![](https://github.com/TwizzyIndy/count_people/raw/main/test4.jpg)
+
+![](https://github.com/TwizzyIndy/count_people/raw/main/test4.jpg_out.jpg)
+
 ![](https://github.com/TwizzyIndy/count_people/raw/main/test4_count.jpg)
