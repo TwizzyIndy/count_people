@@ -27,6 +27,19 @@ def main():
         return
     
     outputImagePath = os.path.basename(imagePath) + "_out" + os.path.splitext(imagePath)[1]
+    count_people_in_image(imagePath, outputImagePath)
+
+    return
+
+def helpInfos():
+    print("")
+    print("Count People")
+    print("TwizzyIndy (Feb/2021)")
+    print("python3 main.py -input test1.jpg")
+    print("")
+    return
+
+def count_people_in_image(inputImage, outputImage):
     execution_path = os.getcwd()
 
     detector = ObjectDetection()
@@ -44,16 +57,7 @@ def main():
         print(eachObject["name"] , " : ", eachObject["percentage_probability"], " : ", eachObject["box_points"] )
         print("--------------------------------")
 
-    print("\n\nFound person in image : " + str(len(detections)))
-
-    return
-
-def helpInfos():
-    print("")
-    print("Count People")
-    print("TwizzyIndy (Feb/2021)")
-    print("python3 main.py -input test1.jpg")
-    print("")
+    print("\n\nFound person(s) in image : " + str(len(detections)))
     return
 
 if __name__ == "__main__":
