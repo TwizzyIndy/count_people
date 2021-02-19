@@ -9,6 +9,9 @@
 from imageai.Detection import ObjectDetection
 import os
 
+# reduce log level for tensorflow
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+
 def main():
     
     if len(os.sys.argv) < 2:
