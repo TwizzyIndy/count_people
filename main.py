@@ -8,6 +8,7 @@
 
 from imageai.Detection import ObjectDetection
 import os
+import warnings
 
 # reduce log level for tensorflow
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
@@ -48,10 +49,13 @@ def count_people_in_image(inputImage, outputImage):
     detector.loadModel()
 
     custom_objects = detector.CustomObjects(person=True)
-    detections = detector.detectCustomObjectsFromImage(custom_objects=custom_objects,
-     input_image=imagePath,
-      output_image_path=outputImagePath,
-      minimum_percentage_probability=10)
+    
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        detections = detector.detectCustomObjectsFromImage(custom_objects=custom_objects,
+                                                        input_image=inputImage,
+                                                        output_image_path=outputImage,
+                                                        minimum_percentage_probability=10) # for detecting more people, you can reduce probability number here
 
     for eachObject in detections:
         print(eachObject["name"] , " : ", eachObject["percentage_probability"], " : ", eachObject["box_points"] )
