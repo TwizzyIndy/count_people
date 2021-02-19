@@ -22,6 +22,9 @@ def main():
 
     if os.sys.argv[1] == "-input":
         imagePath = os.sys.argv[2]
+    else:
+        helpInfos()
+        return
     
     outputImagePath = os.path.basename(imagePath) + "_out" + os.path.splitext(imagePath)[1]
     execution_path = os.getcwd()
